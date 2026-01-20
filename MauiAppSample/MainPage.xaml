@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiAppSample.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiAppSample.ViewModel"
+    xmlns:vm="clr-namespace:MauiAppSample.ViewModel"
+    Title=""
+    x:DataType="local:MainPageViewModel"
+    BackgroundColor="White">
+    <ContentPage.BindingContext>
+        <vm:MainPageViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="10,0" Spacing="10">
+            <Image
+                Margin="0,0,0,-60"
+                Aspect="AspectFit"
+                HeightRequest="240"
+                HorizontalOptions="Center"
+                Source="fllogo.svg"
+                VerticalOptions="Start" />
+
+
+            <Label
+                Style="{StaticResource SubHeadline}"
+                Text="Please Enter Volume"
+                TextColor="#0c0346" />
+            <Entry
+                FontAttributes="Bold"
+                HorizontalOptions="Fill"
+                HorizontalTextAlignment="Center"
+                IsReadOnly="True"
+                Placeholder="Enter Volume"
+                Text="{Binding EnteredPin}"
+                TextColor="Black" />
+            <Grid
+                ColumnDefinitions="Auto,Auto,Auto,Auto"
+                ColumnSpacing="5"
+                HorizontalOptions="Center"
+                RowDefinitions="Auto,Auto,Auto,Auto"
+                RowSpacing="5">
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    BackgroundColor="LightGray"
+                    Command="{Binding DigitCommand}"
+                    CommandParameter="1"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    HorizontalOptions="Fill"
+                    Text="1" />
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    BackgroundColor="LightGray"
+                    Command="{Binding DigitCommand}"
+                    CommandParameter="2"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    HorizontalOptions="Fill"
+                    Text="2" />
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    BackgroundColor="LightGray"
+                    Command="{Binding DigitCommand}"
+                    CommandParameter="3"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    HorizontalOptions="Fill"
+                    Text="3" />
+
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    BackgroundColor="LightGray"
+                    Command="{Binding DigitCommand}"
+                    CommandParameter="4"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    HorizontalOptions="Fill"
+                    Text="4" />
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    BackgroundColor="LightGray"
+                    Command="{Binding DigitCommand}"
+                    CommandParameter="5"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    HorizontalOptions="Fill"
+                    Text="5" />
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    BackgroundColor="LightGray"
+                    Command="{Binding DigitCommand}"
+                    CommandParameter="6"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    HorizontalOptions="Fill"
+                    Text="6" />
+
+
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    BackgroundColor="LightGray"
+                    Command="{Binding DigitCommand}"
+                    CommandParameter="7"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    HorizontalOptions="Fill"
+                    Text="7" />
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    BackgroundColor="LightGray"
+                    Command="{Binding DigitCommand}"
+                    CommandParameter="8"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    HorizontalOptions="Fill"
+                    Text="8" />
+                <Button
+                    Grid.Row="2"
+                    Grid.Column="2"
+                    BackgroundColor="LightGray"
+                    Command="{Binding DigitCommand}"
+                    CommandParameter="9"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    HorizontalOptions="Fill"
+                    Text="9" />
+                <Button
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    BackgroundColor="LightGray"
+                    Command="{Binding DigitCommand}"
+                    CommandParameter="."
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    HorizontalOptions="Fill"
+                    Text="." />
+                <Button
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    BackgroundColor="LightGray"
+                    Command="{Binding DigitCommand}"
+                    CommandParameter="0"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    HorizontalOptions="Fill"
+                    Text="0" />
+                <Button
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    BackgroundColor="Red"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    HorizontalOptions="Fill"
+                    Text="Cancel" />
+                <Button
+                    Grid.Row="1"
+                    Grid.Column="3"
+                    BackgroundColor="Yellow"
+                    Command="{Binding ClearCommand}"
+                    FontAttributes="Bold"
+                    FontSize="Subtitle"
+                    HorizontalOptions="Fill"
+                    Text="Clear" />
+                <Button
+                    Grid.Row="2"
+                    Grid.RowSpan="2"
+                    Grid.Column="3"
+                    BackgroundColor="#05cc69"
+                    Command="{Binding EnterCommand}"
+                    FontAttributes="Bold"
+                    FontSize="30"
+                    HorizontalOptions="Fill"
+                    Text="OK" />
+            </Grid>
+            <Label
+                HorizontalOptions="Center"
+                Text="{Binding PinDisplay}"
+                TextColor="#0c0346" />
+            <Label
+                Margin="0,60,0,0"
+                FontSize="18"
+                HorizontalOptions="Center"
+                Text="{Binding DateTimeClock, StringFormat='{0:T}'}"
+                TextColor="#0c0346"
+                VerticalOptions="End" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
